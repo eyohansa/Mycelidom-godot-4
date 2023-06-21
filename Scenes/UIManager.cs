@@ -21,8 +21,8 @@ public partial class UIManager : SubViewportContainer
         staminaLabel = GetNode<Label>("DebugMenu/PanelContainer/MarginContainer/VBoxContainer/Stamina");
         nutritionLabel = GetNode<Label>("DebugMenu/PanelContainer/MarginContainer/VBoxContainer/Nutrition");
 
-        mouseDetector?.Connect("mouse_entered", new Callable(player, "_mouse_entered"));
-        mouseDetector?.Connect("mouse_exited", new Callable(player, "_mouse_exited"));
+        mouseDetector?.Connect("mouse_entered", new Callable(player, "_MouseEnter"));
+        mouseDetector?.Connect("mouse_exited", new Callable(player, "_MouseExit"));
 
         player?.Connect("UpdateState", new Callable(this, "UpdateState"));
         player?.Connect("UpdateHealth", new Callable(this, "UpdateHealth"));
